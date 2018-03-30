@@ -70,6 +70,9 @@ section{
 		-webkit-box-shadow: 0px 0px 36px 0px rgba(0,0,0,0.3);
 		-moz-box-shadow: 0px 0px 36px 0px rgba(0,0,0,0.3);
 		box-shadow: 0px 0px 36px 0px rgba(0,0,0,0.3);
+		.show-mob{
+			display:none;
+		}
 		h3{
 			color:$blue-france;
 			text-align:center;
@@ -89,6 +92,7 @@ section{
 			}
 			img{
 				height:100px;
+				margin: 0 auto;
 			}
 		}
 	}
@@ -195,8 +199,12 @@ footer{
 @media screen and (max-width: 767px) {
 	section{
 		&.what{
+			.show-mob{
+				display:block;
+			}
 			.full-width-mob{
 				overflow-x:scroll;
+				display:none;
 				.row{
 					width:1300px;
 				}
