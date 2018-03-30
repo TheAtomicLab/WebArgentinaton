@@ -164,6 +164,16 @@ footer{
 				margin-bottom:35px;
 			}
 		}
+		&.sponsors{
+			.hide-on-mobile{
+				display:none;
+			}
+			img{
+				max-width: 300px;
+			    margin: 15px auto 0 auto;
+			    display: table;
+			}
+		}
 	}
 }
 
