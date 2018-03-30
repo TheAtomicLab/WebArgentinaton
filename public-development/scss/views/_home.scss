@@ -141,5 +141,22 @@ footer{
 				display:none;
 			}
 		}
+		&.why{
+			text-align:center;
+			padding:40px 20px;
+			.pic-wrapper{
+				text-align:center;
+				margin-bottom: 40px;
+				img{
+					max-width:400px;
+				}
+			}
+			.row{
+				display:block;
+				[class^="col-"]{
+					display: block;
+				}
+			}
+		}
 	}
 }
