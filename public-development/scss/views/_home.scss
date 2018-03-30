@@ -163,6 +163,14 @@ footer{
 			.margin-bottom-mob, {
 				margin-bottom:35px;
 			}
+		}
+	}
+}
+
+
+@media screen and (max-width: 767px) {
+	section{
+		&.what{
 			.full-width-mob{
 				overflow-x:scroll;
 				.row{
