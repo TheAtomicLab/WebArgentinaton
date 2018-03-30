@@ -158,5 +158,17 @@ footer{
 				}
 			}
 		}
+		&.what{
+			overflow:hidden;
+			.margin-bottom-mob, {
+				margin-bottom:35px;
+			}
+			.full-width-mob{
+				overflow-x:scroll;
+				.row{
+					width:1300px;
+				}
+			}
+		}
 	}
 }
