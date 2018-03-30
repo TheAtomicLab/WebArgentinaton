@@ -1,3 +1,9 @@
+.arrow{
+	@include centerer(true, true);
+	top:0;
+    margin-top: 5px;
+    cursor:pointer;
+}
 section{
 	&.cover{
 		height:90vh;
@@ -26,7 +32,8 @@ section{
 	}
 	&.mission{
 		background:white;
-		padding:50px;
+		padding:70px 50px 50px 50px;
+		position:relative;
 		h2{
 			color:$blue-france;
 		}
@@ -97,12 +104,13 @@ section{
 	}
 }
 footer{
+	position:relative;
 	.info-block{
 		border-top:1px solid #4a90e2;
 		border-bottom:1px solid #4a90e2;
 		color:white;
 		text-align:center;
-		padding:40px 0 20px 0;
+		padding:60px 0 20px 0;
 		ul{
 			margin:25px 0 18px 0;
 			li{
@@ -136,7 +144,7 @@ footer{
 	section{
 		&.mission{
 			text-align:center;
-			padding:40px 20px;
+			padding:70px 20px 40px 20px;
 			.map{
 				display:none;
 			}

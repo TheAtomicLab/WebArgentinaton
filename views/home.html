@@ -9,8 +9,6 @@
     <meta name="description" content="Description" />
     <meta name="keywords" content="keywords" />
 
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-
     <meta property="og:url" content="http://www.argentinaton.com.ar/">
     <meta property="og:title" content="Title">
     <meta property="og:description" content="Description.">
@@ -19,7 +17,7 @@
     <meta property="og:type" content="website">
 
     <!--Favicons-->
-    <link rel="apple-touch-icon" sizes="57x57" href="{% static 'img/favicons/apple-touch-icon.png' %}">
+    <!-- <link rel="apple-touch-icon" sizes="57x57" href="{% static 'img/favicons/apple-touch-icon.png' %}">
     <link rel="apple-touch-icon" sizes="60x60" href="{% static 'img/favicons/apple-touch-icon.png' %}">
     <link rel="apple-touch-icon" sizes="72x72" href="{% static 'img/favicons/apple-touch-icon.png' %}">
     <link rel="apple-touch-icon" sizes="76x76" href="{% static 'img/favicons/apple-touch-icon.png' %}">
@@ -36,19 +34,59 @@
     <link rel="stylesheet" href="{% static 'css/ie.css' %}">
     <meta name="msapplication-TileColor" content="#292425">
     <meta name="msapplication-TileImage" content="/mstile-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="theme-color" content="#ffffff"> -->
 
 	<!-- Style -->
 	<link rel="stylesheet" href="../public/css/styles.css">
 
 	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Lato|Montserrat:300,400,500,700" rel="stylesheet">
+
+	<!-- Scroll -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		$( document ).ready(function() {
+			$('a[href*="#"]')
+				// Remove links that don't actually link to anything
+				.click(function(event) {
+				// On-page links
+				if (
+				  location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+				  && 
+				  location.hostname == this.hostname
+				) {
+				  // Figure out element to scroll to
+				  var target = $(this.hash);
+				  target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+				  // Does a scroll target exist?
+				  if (target.length) {
+				    // Only prevent default if animation is actually gonna happen
+				    event.preventDefault();
+				    $('html, body').animate({
+				      scrollTop: target.offset().top
+				    }, 1000, function() {
+				      // Callback after animation
+				      // Must change focus!
+				      var $target = $(target);
+				      $target.focus();
+				      if ($target.is(":focus")) { // Checking if the target was focused
+				        return false;
+				      } else {
+				        $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+				        $target.focus(); // Set focus again
+				      };
+				    });
+				  }
+				}
+			});
+		});
+	</script>
 </head>
 
 <body>
 	<main class="row">
 	    <div class="col-md-12 max-width-wrapper">
-	        <section class="cover">
+	        <section class="cover" id="cover">
 	        	<div class="main-copy">
 		            <div class="logo">
 		            	<img src="../public/img/argentinaton-logo.png" alt="">
@@ -58,7 +96,10 @@
 		            </div>
 	        	</div>
 	        </section>
-	        <section class="mission">
+	        <section class="mission" id="mission">
+	        	<a href="#mission" class="arrow">
+	        		<img src="../public/img/arrow-down.svg" alt=">">
+	        	</a>
 	            <article class="row">
 	            	<div class="col-md-7">
 	            		<h2>
@@ -212,6 +253,9 @@
                 </article>
             </section>
             <footer>
+            	<a href="#cover" class="arrow">
+            		<img src="../public/img/arrow-up.svg" alt=">">
+            	</a>
 				<div class="info-block">
 					<div class="intro">
 	            		Seguinos en nuestras redes sociales
@@ -237,7 +281,6 @@
             </footer>
 	    </div>
 	</main>
-
 </body>
 </html>
 
