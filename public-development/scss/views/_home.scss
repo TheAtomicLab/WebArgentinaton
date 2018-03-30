@@ -130,3 +130,14 @@ footer{
 		padding:20px 0;
 	}
 }
+
+
+@media screen and (max-width: 960px) {
+	section{
+		&.mission{
+			.map{
+				display:none;
+			}
+		}
+	}
+}
