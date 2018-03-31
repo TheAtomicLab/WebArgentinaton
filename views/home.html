@@ -45,6 +45,7 @@
 	<!-- Scroll -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="../public/js/slick.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../public/js/parallax.js" type="text/javascript" charset="utf-8"></script>
 	<script>
 		$( document ).ready(function() {
 			$('a[href*="#"]')
@@ -93,70 +94,136 @@
 </head>
 
 <body>
-	<main class="row">
-	    <div class="col-md-12 max-width-wrapper">
-	        <section class="cover" id="cover">
-	        	<div class="main-copy">
-		            <div class="logo">
-		            	<img src="../public/img/argentinaton-logo.png" alt="">
-		            </div>
-		            <div class="tagline">
-		            	Queremos recorrer toda la Argentina cumpliendo sueños, regalando manos y brazos mecánicos 3D.
-		            </div>
-	        	</div>
-	        </section>
-	        <section class="mission" id="mission">
-	        	<a href="#mission" class="arrow">
-	        		<img src="../public/img/arrow-down.svg" alt=">">
-	        	</a>
-	            <article class="row">
-	            	<div class="col-md-7">
-	            		<h2>
-	            			¿Qué<br/>queremos<br/>hacer?
-	            		</h2>
-	            		<p>
-	            			Conociendo la gran demanda y las dificultades de conexión que hay en todo 
-	            			el país, queremos recorrerlo de punta a punta regalando manos y brazos mecánicos 3D, llevando una impresora a bordo alimentada por paneles solares. La idea es partir de Buenos Aires con un itinerario armando, basándonos en todos los pedidos que tenemos a lo largo y a lo ancho del país.
-							<br/>
-							<br/>
-	            			No queremos actuar como una empresa de correo, tampoco pasar por la casa entregar la mano 3D e irnos, sino que la idea es compartir un almuerzo o una cena con la familia, conocer sus historias y costumbres, escucharlos, compartir experiencias. Queremos documentar todo ese proceso (fotos, videos, audios y textos) y difundirlo de diversas formas: Redes Sociales, Videos en vivo, Podcast (a definir), Video blog, Libro digital y en papel (a definir) y Documental (a definir). Todo el contenido generado tendrá placas, menciones y otros tipos 
-	            			de referencias a las empresas interesadas.
-	            		</p>
-	            	</div>
-	            	<div class="col-md-5">
-						<img class="map" src="../public/img/map.png" alt="mapa">
-	            	</div>
-	            </article>
-	        </section>
-	        <section class="why m-t-11 m-b-11">
-	            <article class="row">
-	            	<div class="col-md-6 pic-wrapper">
-						<img class="mano" src="../public/img/mano.jpg" alt="mano">
-	            	</div>
-	            	<div class="col-md-6">
-	            		<div class="centered">
-		            		<h2>
-		            			¿Por qué?
-		            		</h2>
-		            		<p>
-		            			Hay una necesidad que cubrir y las soluciones actuales (provistas por privados, obras sociales, Estado, entre otros) 
-		            			no son fáciles de adquirir para todos, las prótesis tienen un costo aproximado desde 7500 US$ a mas de 15000 US$, mientras que con impresión 3D se pueden hacer por un aproximado de 20 US$. 
-								<br/>
-								<br/>
-		            			En Atomic Lab entregamos manos y brazos impresos en 3D de manera 100% gratuita a cualquier persona que lo pida. Tenemos aproximadamente 1000 pedidos de manos y brazos mecánicos 3D en Argentina y miles más en el resto del mundo. Conocemos que ese número es solo un pequeño porcentaje de todos los casos que existen en el país
-		            		</p>
-	            		</div>
-	            	</div>
-	            </article>
-	        </section>
-            <section class="what">
-        		<h3>
-        			¿Qué te gustaría hacer?
-        		</h3>
-        		<article class="full-width-mob">
-	                <div class="row">
-	                	<div class="col-xs-3 col-md-3 col-sm-6 margin-bottom-mob">
-	                		<div class="item-box">
+	<main>
+	    <section class="cover" id="cover">
+	    	<div class="parallax-window" data-parallax="scroll" data-image-src="../public/img/background.png">
+	    	</div>
+	    	<div class="main-copy">
+	            <div class="logo">
+	            	<img src="../public/img/argentinaton-logo.png" alt="">
+	            </div>
+	            <div class="tagline">
+	            	Queremos recorrer toda la Argentina cumpliendo sueños, regalando manos y brazos mecánicos 3D.
+	            </div>
+	    	</div>
+	    </section>
+		<div class="row">
+		    <div class="col-md-12">
+		        <section class="mission" id="mission">
+    				<img class="compass" src="../public/img/compass.png" alt="compass">
+    				<div class="max-width-wrapper">
+			        	<a href="#mission" class="arrow">
+			        		<img src="../public/img/arrow-down.svg" alt=">">
+			        	</a>
+			            <article class="row">
+			            	<div class="col-md-7">
+			            		<h2>
+			            			¿Qué<br/>queremos<br/>hacer?
+			            		</h2>
+			            		<p>
+			            			Conociendo la gran demanda y las dificultades de conexión que hay en todo 
+			            			el país, queremos recorrerlo de punta a punta regalando manos y brazos mecánicos 3D, llevando una impresora a bordo alimentada por paneles solares. La idea es partir de Buenos Aires con un itinerario armando, basándonos en todos los pedidos que tenemos a lo largo y a lo ancho del país.
+									<br/>
+									<br/>
+			            			No queremos actuar como una empresa de correo, tampoco pasar por la casa entregar la mano 3D e irnos, sino que la idea es compartir un almuerzo o una cena con la familia, conocer sus historias y costumbres, escucharlos, compartir experiencias. Queremos documentar todo ese proceso (fotos, videos, audios y textos) y difundirlo de diversas formas: Redes Sociales, Videos en vivo, Podcast (a definir), Video blog, Libro digital y en papel (a definir) y Documental (a definir). Todo el contenido generado tendrá placas, menciones y otros tipos 
+			            			de referencias a las empresas interesadas.
+			            		</p>
+			            	</div>
+			            	<div class="col-md-5">
+								<img class="map" src="../public/img/map.png" alt="mapa">
+			            	</div>
+			            </article>
+    				</div>
+		        </section>
+		        <div class="max-width-wrapper">
+			        <section class="why m-t-11 m-b-11">
+			            <article class="row">
+			            	<div class="col-md-6 pic-wrapper">
+								<img class="mano" src="../public/img/mano.jpg" alt="mano">
+			            	</div>
+			            	<div class="col-md-6">
+			            		<div class="centered">
+				            		<h2>
+				            			¿Por qué?
+				            		</h2>
+				            		<p>
+				            			Hay una necesidad que cubrir y las soluciones actuales (provistas por privados, obras sociales, Estado, entre otros) 
+				            			no son fáciles de adquirir para todos, las prótesis tienen un costo aproximado desde 7500 US$ a mas de 15000 US$, mientras que con impresión 3D se pueden hacer por un aproximado de 20 US$. 
+										<br/>
+										<br/>
+				            			En Atomic Lab entregamos manos y brazos impresos en 3D de manera 100% gratuita a cualquier persona que lo pida. Tenemos aproximadamente 1000 pedidos de manos y brazos mecánicos 3D en Argentina y miles más en el resto del mundo. Conocemos que ese número es solo un pequeño porcentaje de todos los casos que existen en el país
+				            		</p>
+			            		</div>
+			            	</div>
+			            </article>
+			        </section>
+		            <section class="what">
+		        		<h3>
+		        			¿Qué te gustaría hacer?
+		        		</h3>
+		        		<article class="full-width-mob">
+			                <div class="row">
+			                	<div class="col-xs-3 col-md-3 col-sm-6 margin-bottom-mob">
+			                		<div class="item-box">
+				                		<div class="icon">
+				                			<img src="../public/img/pencil.svg" alt="mano">
+				                		</div>
+				                		<div class="text">
+				                			Quiero que me 
+				                			entreguen una mano 3D
+				                		</div>
+				                		<div class="btn btn-lg">
+				                			Ingresar
+				                		</div>
+			                		</div>
+			                	</div>
+			                	<div class="col-xs-3 col-md-3 col-sm-6 margin-bottom-mob">
+			                		<div class="item-box">
+				                		<div class="icon">
+				                			<img src="../public/img/people.svg" alt="people">
+				                		</div>
+				                		<div class="text">
+				                			Quiero hacer una 
+											donación individual
+				                		</div>
+				                		<div class="btn btn-lg">
+				                			Ingresar
+				                		</div>
+			                		</div>
+			                	</div>
+			                	<div class="col-xs-3 col-md-3 col-sm-6">
+			                		<div class="item-box">
+				                		<div class="icon">
+				                			<img src="../public/img/discussion.svg" alt="discussion">
+				                		</div>
+				                		<div class="text">
+				                			Quiero que den una 
+											charla en mi ciudad
+				                		</div>
+				                		<div class="btn btn-lg">
+				                			Ingresar
+				                		</div>
+			                		</div>
+			                	</div>
+			                	<div class="col-xs-3 col-md-3 col-sm-6">
+			                		<div class="item-box">
+				                		<div class="icon">
+				                			<img src="../public/img/id-card.svg" alt="card">
+				                		</div>
+				                		<div class="text">
+				                			Quiero sponsorear el 
+				                			proyecto con mi empresa
+				                		</div>
+				                		<div class="btn btn-lg">
+				                			Ingresar
+				                		</div>
+			                		</div>
+			                	</div>
+			                </div>
+		        		</article>
+		        		<article class="center slider show-mob">
+		        		  <div>
+		            		<div class="item-box">
 		                		<div class="icon">
 		                			<img src="../public/img/pencil.svg" alt="mano">
 		                		</div>
@@ -167,186 +234,129 @@
 		                		<div class="btn btn-lg">
 		                			Ingresar
 		                		</div>
-	                		</div>
-	                	</div>
-	                	<div class="col-xs-3 col-md-3 col-sm-6 margin-bottom-mob">
-	                		<div class="item-box">
-		                		<div class="icon">
-		                			<img src="../public/img/people.svg" alt="people">
-		                		</div>
-		                		<div class="text">
-		                			Quiero que me 
-		                			entreguen una mano 3D
-		                		</div>
-		                		<div class="btn btn-lg">
-		                			Ingresar
-		                		</div>
-	                		</div>
-	                	</div>
-	                	<div class="col-xs-3 col-md-3 col-sm-6">
-	                		<div class="item-box">
-		                		<div class="icon">
-		                			<img src="../public/img/discussion.svg" alt="discussion">
-		                		</div>
-		                		<div class="text">
-		                			Quiero que me 
-		                			entreguen una mano 3D
-		                		</div>
-		                		<div class="btn btn-lg">
-		                			Ingresar
-		                		</div>
-	                		</div>
-	                	</div>
-	                	<div class="col-xs-3 col-md-3 col-sm-6">
-	                		<div class="item-box">
+		            		</div>
+		        		  </div>
+		        		  <div>
+				    		<div class="item-box">
+				        		<div class="icon">
+				        			<img src="../public/img/people.svg" alt="people">
+				        		</div>
+				        		<div class="text">
+				        			Quiero hacer una 
+									donación individual
+				        		</div>
+				        		<div class="btn btn-lg">
+				        			Ingresar
+				        		</div>
+				    		</div>
+		        		  </div>
+		        		  <div>
+				    		<div class="item-box">
+				        		<div class="icon">
+				        			<img src="../public/img/discussion.svg" alt="discussion">
+				        		</div>
+				        		<div class="text">
+		                			Quiero que den una 
+									charla en mi ciudad
+				        		</div>
+				        		<div class="btn btn-lg">
+				        			Ingresar
+				        		</div>
+				    		</div>
+		        		  </div>
+		        		  <div>
+		        		    <div class="item-box">
 		                		<div class="icon">
 		                			<img src="../public/img/id-card.svg" alt="card">
 		                		</div>
 		                		<div class="text">
-		                			Quiero que me 
-		                			entreguen una mano 3D
+		                			Quiero sponsorear el 
+		                			proyecto con mi empresa
 		                		</div>
 		                		<div class="btn btn-lg">
 		                			Ingresar
 		                		</div>
-	                		</div>
-	                	</div>
-	                </div>
-        		</article>
-        		<article class="center slider show-mob">
-        		  <div>
-            		<div class="item-box">
-                		<div class="icon">
-                			<img src="../public/img/pencil.svg" alt="mano">
-                		</div>
-                		<div class="text">
-                			Quiero que me 
-                			entreguen una mano 3D
-                		</div>
-                		<div class="btn btn-lg">
-                			Ingresar
-                		</div>
-            		</div>
-        		  </div>
-        		  <div>
-		    		<div class="item-box">
-		        		<div class="icon">
-		        			<img src="../public/img/people.svg" alt="people">
-		        		</div>
-		        		<div class="text">
-		        			Quiero que me 
-		        			entreguen una mano 3D
-		        		</div>
-		        		<div class="btn btn-lg">
-		        			Ingresar
-		        		</div>
-		    		</div>
-        		  </div>
-        		  <div>
-		    		<div class="item-box">
-		        		<div class="icon">
-		        			<img src="../public/img/discussion.svg" alt="discussion">
-		        		</div>
-		        		<div class="text">
-		        			Quiero que me 
-		        			entreguen una mano 3D
-		        		</div>
-		        		<div class="btn btn-lg">
-		        			Ingresar
-		        		</div>
-		    		</div>
-        		  </div>
-        		  <div>
-        		    <div class="item-box">
-                		<div class="icon">
-                			<img src="../public/img/id-card.svg" alt="card">
-                		</div>
-                		<div class="text">
-                			Quiero que me 
-                			entreguen una mano 3D
-                		</div>
-                		<div class="btn btn-lg">
-                			Ingresar
-                		</div>
-            		</div>
-        		  </div>
-        		</article>
-            </section>
-            <section class="sponsors m-t-11 m-b-11">
-        		<h3>
-        			Empresas que nos acompañan
-        		</h3>
-                <article class="row">
-                	<div class="col-md-1">
-	            	</div>
-	            	<div class="col-md-2">
-	            		<img src="../public/img/placeholder.jpg" alt="company">
-	            	</div>
-	            	<div class="col-md-2">
-	            		<img src="../public/img/placeholder.jpg" alt="company">
-	            	</div>
-	            	<div class="col-md-2">
-	            		<img src="../public/img/placeholder.jpg" alt="company">
-	            	</div>
-	            	<div class="col-md-2">
-	            		<img src="../public/img/placeholder.jpg" alt="company">
-	            	</div>
-	            	<div class="col-md-2">
-	            		<img src="../public/img/placeholder.jpg" alt="company">
-	            	</div>
-	            	<div class="col-md-1">
-	            	</div>
-                </article>
-                <article class="row hide-on-mobile">
-                	<div class="col-md-1">
-	            	</div>
-	            	<div class="col-md-2">
-	            		<img src="../public/img/placeholder.jpg" alt="company">
-	            	</div>
-	            	<div class="col-md-2">
-	            		<img src="../public/img/placeholder.jpg" alt="company">
-	            	</div>
-	            	<div class="col-md-2">
-	            		<img src="../public/img/placeholder.jpg" alt="company">
-	            	</div>
-	            	<div class="col-md-2">
-	            		<img src="../public/img/placeholder.jpg" alt="company">
-	            	</div>
-	            	<div class="col-md-2">
-	            		<img src="../public/img/placeholder.jpg" alt="company">
-	            	</div>
-	            	<div class="col-md-1">
-	            	</div>
-                </article>
-            </section>
-            <footer>
-            	<a href="#cover" class="arrow">
-            		<img src="../public/img/arrow-up.svg" alt=">">
-            	</a>
-				<div class="info-block">
-					<div class="intro">
-	            		Seguinos en nuestras redes sociales
-					</div>
-	            	<ul>
-	            		<li>
-	            			<img src="../public/img/instagram.png" alt="instagram">
-	            		</li>
-	            		<li>
-	            			<img src="../public/img/facebook.png" alt="facebook">
-	            		</li>
-	            		<li>
-	            			<img src="../public/img/twitter.png" alt="twitter">
-	            		</li>
-	            	</ul>
-	            	<div class="contact-mail">
-	            		info@atomiclab.org
-	            	</div>
-				</div>
-            	<div class="copyright">
-            		Copyrights © 2018 | AtomicLab
-            	</div>
-            </footer>
-	    </div>
+		            		</div>
+		        		  </div>
+		        		</article>
+		            </section>
+		            <section class="sponsors m-t-11 m-b-11">
+		        		<h3>
+		        			Empresas que nos acompañan
+		        		</h3>
+		                <article class="row">
+		                	<div class="col-md-1">
+			            	</div>
+			            	<div class="col-md-2">
+			            		<img src="../public/img/placeholder.jpg" alt="company">
+			            	</div>
+			            	<div class="col-md-2">
+			            		<img src="../public/img/placeholder.jpg" alt="company">
+			            	</div>
+			            	<div class="col-md-2">
+			            		<img src="../public/img/placeholder.jpg" alt="company">
+			            	</div>
+			            	<div class="col-md-2">
+			            		<img src="../public/img/placeholder.jpg" alt="company">
+			            	</div>
+			            	<div class="col-md-2">
+			            		<img src="../public/img/placeholder.jpg" alt="company">
+			            	</div>
+			            	<div class="col-md-1">
+			            	</div>
+		                </article>
+		                <article class="row hide-on-mobile">
+		                	<div class="col-md-1">
+			            	</div>
+			            	<div class="col-md-2">
+			            		<img src="../public/img/placeholder.jpg" alt="company">
+			            	</div>
+			            	<div class="col-md-2">
+			            		<img src="../public/img/placeholder.jpg" alt="company">
+			            	</div>
+			            	<div class="col-md-2">
+			            		<img src="../public/img/placeholder.jpg" alt="company">
+			            	</div>
+			            	<div class="col-md-2">
+			            		<img src="../public/img/placeholder.jpg" alt="company">
+			            	</div>
+			            	<div class="col-md-2">
+			            		<img src="../public/img/placeholder.jpg" alt="company">
+			            	</div>
+			            	<div class="col-md-1">
+			            	</div>
+		                </article>
+		            </section>
+		            <footer>
+		            	<a href="#cover" class="arrow">
+		            		<img src="../public/img/arrow-up.svg" alt=">">
+		            	</a>
+						<div class="info-block">
+							<div class="intro">
+			            		Seguinos en nuestras redes sociales
+							</div>
+			            	<ul>
+			            		<li>
+			            			<img src="../public/img/instagram.png" alt="instagram">
+			            		</li>
+			            		<li>
+			            			<img src="../public/img/facebook.png" alt="facebook">
+			            		</li>
+			            		<li>
+			            			<img src="../public/img/twitter.png" alt="twitter">
+			            		</li>
+			            	</ul>
+			            	<div class="contact-mail">
+			            		info@atomiclab.org
+			            	</div>
+						</div>
+		            	<div class="copyright">
+		            		Copyrights © 2018 | AtomicLab
+		            	</div>
+		            </footer>
+		        </div>
+		    </div>
+		</div>
 	</main>
 </body>
 </html>
