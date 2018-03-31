@@ -1,4 +1,4 @@
-button, .btn{
+button, .btn, a.btn{
 	cursor:pointer;
 	@include border-radius(3px);
 	color:white;
@@ -7,7 +7,6 @@ button, .btn{
 	font-weight:700;
 	font-family: 'Lato', sans-serif;
 	width:auto;
-	min-width:180px;
 	display:table;
 	background:$aqua-emerald;
 	width:90%;
