@@ -37,7 +37,8 @@
     <meta name="theme-color" content="#ffffff"> -->
 
 	<!-- Style -->
-	<link rel="stylesheet" href="../public/css/styles.css">
+  <link rel="stylesheet" href="../public/css/styles.css">
+	<link rel="stylesheet" href="../public/css/styles2.css">
 
 	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Lato|Montserrat:300,400,500,700" rel="stylesheet">
@@ -53,8 +54,8 @@
 				.click(function(event) {
 				// On-page links
 				if (
-				  location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
-				  && 
+				  location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+				  &&
 				  location.hostname == this.hostname
 				) {
 				  // Figure out element to scroll to
@@ -91,9 +92,20 @@
 		      });
 		});
 	</script>
+	<script src='https://www.google.com/recaptcha/api.js?onload=loadCaptcha&render=explicit'></script>
 </head>
 
-<body>
+<body class="">
+  <div class="full_view_pop">
+    <div>
+			<div class="full_view_bg" onclick="close_full_popup()"></div>
+			<div class="full_view_cont">
+				<div class="full_view_close" onclick="close_full_popup()" tabindex="1" onkeydown="close_full_popup(event)"><img src="../public/img/close.svg" alt="cerrar"></div>
+				<div class="full_view_output">
+				</div>
+			</div>
+    </div>
+  </div>
 	<main>
 	    <section class="cover" id="cover">
 	    	<div class="parallax-window" data-parallax="scroll" data-image-src="../public/img/background.png">
@@ -121,11 +133,11 @@
 			            			¿Qué<br/>queremos<br/>hacer?
 			            		</h2>
 			            		<p>
-			            			Conociendo la gran demanda y las dificultades de conexión que hay en todo 
+			            			Conociendo la gran demanda y las dificultades de conexión que hay en todo
 			            			el país, queremos recorrerlo de punta a punta regalando manos y brazos mecánicos 3D, llevando una impresora a bordo alimentada por paneles solares. La idea es partir de Buenos Aires con un itinerario armando, basándonos en todos los pedidos que tenemos a lo largo y a lo ancho del país.
 									<br/>
 									<br/>
-			            			No queremos actuar como una empresa de correo, tampoco pasar por la casa entregar la mano 3D e irnos, sino que la idea es compartir un almuerzo o una cena con la familia, conocer sus historias y costumbres, escucharlos, compartir experiencias. Queremos documentar todo ese proceso (fotos, videos, audios y textos) y difundirlo de diversas formas: Redes Sociales, Videos en vivo, Podcast (a definir), Video blog, Libro digital y en papel (a definir) y Documental (a definir). Todo el contenido generado tendrá placas, menciones y otros tipos 
+			            			No queremos actuar como una empresa de correo, tampoco pasar por la casa entregar la mano 3D e irnos, sino que la idea es compartir un almuerzo o una cena con la familia, conocer sus historias y costumbres, escucharlos, compartir experiencias. Queremos documentar todo ese proceso (fotos, videos, audios y textos) y difundirlo de diversas formas: Redes Sociales, Videos en vivo, Podcast (a definir), Video blog, Libro digital y en papel (a definir) y Documental (a definir). Todo el contenido generado tendrá placas, menciones y otros tipos
 			            			de referencias a las empresas interesadas.
 			            		</p>
 			            	</div>
@@ -147,8 +159,8 @@
 				            			¿Por qué?
 				            		</h2>
 				            		<p>
-				            			Hay una necesidad que cubrir y las soluciones actuales (provistas por privados, obras sociales, Estado, entre otros) 
-				            			no son fáciles de adquirir para todos, las prótesis tienen un costo aproximado desde 7500 US$ a mas de 15000 US$, mientras que con impresión 3D se pueden hacer por un aproximado de 20 US$. 
+				            			Hay una necesidad que cubrir y las soluciones actuales (provistas por privados, obras sociales, Estado, entre otros)
+				            			no son fáciles de adquirir para todos, las prótesis tienen un costo aproximado desde 7500 US$ a mas de 15000 US$, mientras que con impresión 3D se pueden hacer por un aproximado de 20 US$.
 										<br/>
 										<br/>
 				            			En Atomic Lab entregamos manos y brazos impresos en 3D de manera 100% gratuita a cualquier persona que lo pida. Tenemos aproximadamente 1000 pedidos de manos y brazos mecánicos 3D en Argentina y miles más en el resto del mundo. Conocemos que ese número es solo un pequeño porcentaje de todos los casos que existen en el país
@@ -169,11 +181,11 @@
 				                			<img src="../public/img/pencil.svg" alt="mano">
 				                		</div>
 				                		<div class="text">
-				                			Quiero que me 
+				                			Quiero que me
 				                			entreguen una mano 3D
 				                		</div>
-				                		<a href="#" class="btn btn-lg">
-				                			Ingresar
+				                		<a href="http://limbs.earth" target="_blank" class="btn btn-lg">
+				                			Más info
 				                		</a>
 			                		</div>
 			                	</div>
@@ -183,11 +195,11 @@
 				                			<img src="../public/img/people.svg" alt="people">
 				                		</div>
 				                		<div class="text">
-				                			Quiero hacer una 
+				                			Quiero hacer una
 											donación individual
 				                		</div>
-				                		<a href="#" class="btn btn-lg">
-				                			Ingresar
+				                		<a tabindex="1" onclick="open_form('donar')" onkeydown="open_form('donar', event)" class="btn btn-lg">
+				                			¡Donar!
 				                		</a>
 			                		</div>
 			                	</div>
@@ -197,11 +209,11 @@
 				                			<img src="../public/img/discussion.svg" alt="discussion">
 				                		</div>
 				                		<div class="text">
-				                			Quiero que den una 
+				                			Quiero que den una
 											charla en mi ciudad
 				                		</div>
-				                		<a href="#" class="btn btn-lg">
-				                			Ingresar
+				                		<a tabindex="1" onclick="open_form('charla')" onkeydown="open_form('charla', event)" class="btn btn-lg">
+				                			Contacto
 				                		</a>
 			                		</div>
 			                	</div>
@@ -211,11 +223,11 @@
 				                			<img src="../public/img/id-card.svg" alt="card">
 				                		</div>
 				                		<div class="text">
-				                			Quiero sponsorear el 
+				                			Quiero sponsorear el
 				                			proyecto con mi empresa
 				                		</div>
-				                		<a href="#" class="btn btn-lg">
-				                			Ingresar
+				                		<a tabindex="1" onclick="open_form('sponsor')" onkeydown="open_form('sponsor', event)" class="btn btn-lg">
+				                			Contacto
 				                		</a>
 			                		</div>
 			                	</div>
@@ -228,11 +240,11 @@
 		                			<img src="../public/img/pencil.svg" alt="mano">
 		                		</div>
 		                		<div class="text">
-		                			Quiero que me 
+		                			Quiero que me
 		                			entreguen una mano 3D
 		                		</div>
-		                		<a href="#" class="btn btn-lg">
-		                			Ingresar
+		                		<a href="http://limbs.earth" target="_blank" class="btn btn-lg">
+		                			Más info
 		                		</a>
 		            		</div>
 		        		  </div>
@@ -242,11 +254,11 @@
 				        			<img src="../public/img/people.svg" alt="people">
 				        		</div>
 				        		<div class="text">
-				        			Quiero hacer una 
+				        			Quiero hacer una
 									donación individual
 				        		</div>
-				        		<a href="#" class="btn btn-lg">
-				        			Ingresar
+				        		<a tabindex="1" onclick="open_form('donar')" onkeydown="open_form('donar', event)" class="btn btn-lg">
+				        			¡Donar!
 				        		</a>
 				    		</div>
 		        		  </div>
@@ -256,11 +268,11 @@
 				        			<img src="../public/img/discussion.svg" alt="discussion">
 				        		</div>
 				        		<div class="text">
-		                			Quiero que den una 
+		                			Quiero que den una
 									charla en mi ciudad
 				        		</div>
-				        		<a href="#" class="btn btn-lg">
-				        			Ingresar
+				        		<a tabindex="1" onclick="open_form('charla')" onkeydown="open_form('charla', event)" class="btn btn-lg">
+				        			Contacto
 				        		</a>
 				    		</div>
 		        		  </div>
@@ -270,11 +282,11 @@
 		                			<img src="../public/img/id-card.svg" alt="card">
 		                		</div>
 		                		<div class="text">
-		                			Quiero sponsorear el 
+		                			Quiero sponsorear el
 		                			proyecto con mi empresa
 		                		</div>
-		                		<a href="#" class="btn btn-lg">
-		                			Ingresar
+		                		<a tabindex="1" onclick="open_form('sponsor')" onkeydown="open_form('sponsor', event)" class="btn btn-lg">
+		                			Contacto
 		                		</a>
 		            		</div>
 		        		  </div>
@@ -288,27 +300,27 @@
 		                	<div class="col-md-1">
 			            	</div>
 			            	<div class="col-md-2">
-			            		<a href="#">
+			            		<a onclick="open_form('sponsor')">
 			            			<img src="../public/img/placeholder.jpg" alt="company">
 			            		</a>
 			            	</div>
 			            	<div class="col-md-2">
-			            		<a href="#">
+			            		<a onclick="open_form('sponsor')">
 			            			<img src="../public/img/placeholder.jpg" alt="company">
 			            		</a>
 			            	</div>
 			            	<div class="col-md-2">
-			            		<a href="#">
+			            		<a onclick="open_form('sponsor')">
 			            			<img src="../public/img/placeholder.jpg" alt="company">
 			            		</a>
 			            	</div>
 			            	<div class="col-md-2">
-			            		<a href="#">
+			            		<a onclick="open_form('sponsor')">
 			            			<img src="../public/img/placeholder.jpg" alt="company">
 			            		</a>
 			            	</div>
 			            	<div class="col-md-2">
-			            		<a href="#">
+			            		<a onclick="open_form('sponsor')">
 			            			<img src="../public/img/placeholder.jpg" alt="company">
 			            		</a>
 			            	</div>
@@ -319,27 +331,27 @@
 		                	<div class="col-md-1">
 			            	</div>
 			            	<div class="col-md-2">
-			            		<a href="#">
+			            		<a onclick="open_form('sponsor')">
 			            			<img src="../public/img/placeholder.jpg" alt="company">
 			            		</a>
 			            	</div>
 			            	<div class="col-md-2">
-			            		<a href="#">
+			            		<a onclick="open_form('sponsor')">
 			            			<img src="../public/img/placeholder.jpg" alt="company">
 			            		</a>
 			            	</div>
 			            	<div class="col-md-2">
-			            		<a href="#">
+			            		<a onclick="open_form('sponsor')">
 			            			<img src="../public/img/placeholder.jpg" alt="company">
 			            		</a>
 			            	</div>
 			            	<div class="col-md-2">
-			            		<a href="#">
+			            		<a onclick="open_form('sponsor')">
 			            			<img src="../public/img/placeholder.jpg" alt="company">
 			            		</a>
 			            	</div>
 			            	<div class="col-md-2">
-			            		<a href="#">
+			            		<a onclick="open_form('sponsor')">
 			            			<img src="../public/img/placeholder.jpg" alt="company">
 			            		</a>
 			            	</div>
@@ -384,6 +396,6 @@
 		    </div>
 		</div>
 	</main>
+	<script src="../public/js/forms_arg.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>
-
