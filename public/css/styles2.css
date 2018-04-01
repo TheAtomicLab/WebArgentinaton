@@ -2,6 +2,23 @@
 	background: linear-gradient(rgba(71, 114, 178, 0.5) 60%, rgba(71, 114, 178, 1));
 	opacity: 1;
 }
+.f-blue {
+	color: #4772b2;
+	font-size: inherit;
+	font-weight: bold;
+}
+a, a:link, a:visited {
+	font-size: inherit;
+	text-decoration: underline;
+}
+button, .btn, a.btn {
+	background: #c6446b;
+	text-decoration: none;
+	font-size: 17px;
+}
+button:hover, .btn:hover, a.btn:hover {
+    background: #4772b2;
+}
 body.full_pop_show {
 	overflow: hidden;
 }
@@ -73,9 +90,9 @@ body.full_pop_show .full_view_pop {
 	color: #262626;
 }
 .form_argent input {
-    border: none;
-    box-shadow: 0px 1px 0px #ccc;
-    width: 100%;
+  border: none;
+  box-shadow: 0px 1px 0px #ccc;
+  width: 100%;
 }
 .form_argent input:focus {
 	box-shadow: 0px 2px 0px #4772b2;
@@ -86,36 +103,39 @@ body.full_pop_show .full_view_pop {
 	margin-bottom: 5px;
 }
 .form_argent button {
-    border: none;
-    padding: 10px;
-    background: #4772b2;
-    margin: 0px;
-    margin-top: 30px;
-    width: 100%;
+  border: none;
+  padding: 10px;
+  background: #4772b2;
+  margin: 0px;
+  margin-top: 30px;
+  width: 100%;
 }
 
 .donation_item {
-    margin: 40px auto;
-    text-align: center;
-    max-width: 290px;
+  margin: 40px auto;
+  text-align: center;
+  max-width: 290px;
 }
 .donation_item:last-child {
-	margin-bottom: 0px;
+margin-bottom: 0px;
 }
 .donations p.km {
-    font-size: 28px;
-    background: #4772b2;
-    color: white;
-    padding: 7px;
-    padding-bottom: 2px;
-    border-radius: 5px;
-    font-weight: 500;
+  font-size: 28px;
+  background: #4772b2;
+  color: white;
+  padding: 7px;
+  padding-bottom: 2px;
+  border-radius: 5px;
+  font-weight: 500;
 }
 .donations p {
-    margin: 0px;
+  margin: 0px;
+}
+.donations a {
+	text-decoration: none;
 }
 .donations .km span {
-    font-weight: 400;
+  font-weight: 400;
 }
 
 @media screen and (max-width:500px){
@@ -124,5 +144,12 @@ body.full_pop_show .full_view_pop {
 	}
 	.full_view_output h3 {
 		font-size: 30px;
+	}
+	section.mission .max-width-wrapper {
+		padding: 60px 5px;
+	}
+	section.mission .max-width-wrapper h2 {
+		font-size: 35px;
+		line-height: 40px;
 	}
 }

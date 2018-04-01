@@ -40,7 +40,7 @@ let form_charla = `
 				</div>
 				<!-- end of primary -->
 				<div id="recaptcha"></div>
-				<div class="byline"> <button class="button editable " type="submit" data-editfield="subscribe">Enviar</button></div>
+				<div class="send_btn"></div>
 			</div>
 		</form>
 	</div>
@@ -104,7 +104,7 @@ let form_sponsors = `
 				</div>
 				<!-- end of primary -->
 				<div id="recaptcha"></div>
-				<div class="byline" > <button class="button editable " type="submit" data-editfield="subscribe" >Enviar</button></div>
+				<div class="send_btn"></div>
 			</div>
 		</form>
 	</div>
@@ -139,6 +139,12 @@ let form_donaciones = `
 	</div>
 </div>
 `;
+let html_send_button = `<div class="byline" > <button class="button editable " type="submit" data-editfield="subscribe" >Enviar</button></div>`;
+let callbackCaptcha = function(){
+	if(response.length > 0) {
+        $(".sned_btn").html(html_send_button);
+    }
+}
 
 function open_form(name = false, event = false){
 	if(event != false){
@@ -165,10 +171,9 @@ function open_form(name = false, event = false){
 		var captchaContainer = null;
 		let loadCaptcha = function() {
 			captchaContainer = grecaptcha.render('recaptcha', {
-				'sitekey' : '6Ld-BFAUAAAAADih-o6oeDjZreC3S5oalMQ2-4g9',
-				'callback' : function(response) {
-					console.log(response);
-				}
+				'sitekey' : '6LemC1AUAAAAABoX1IFm82dySumqJUu8KzOGB7wM',
+				'theme' : 'light',
+				'callback' : callbackCaptcha
 			});
 		};
 		loadCaptcha();
