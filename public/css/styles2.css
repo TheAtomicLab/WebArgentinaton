@@ -1,6 +1,21 @@
 .parallax-window {
-	background: linear-gradient(rgba(71, 114, 178, 0.5) 60%, rgba(71, 114, 178, 1));
+	background: none;
 	opacity: 1;
+}
+.parallax-window:before {
+  content: '';
+  background: linear-gradient(rgba(71, 114, 178, 0.5) 60%, rgba(71, 114, 178, 1));
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+}
+section.cover .main-copy .logo {
+	max-width: 600px;
+}
+section.cover {
+	height: calc(100vh - 52px);
 }
 .f-blue {
 	color: #4772b2;
@@ -182,12 +197,23 @@ margin-bottom: 0px;
 	margin-top: 20px;
 }
 
+@media (max-width: 1020px){
+	section.cover {
+		height: calc(100vh - 122px);
+	}
+}
 @media screen and (max-width:500px){
 	.full_view_cont {
 		padding: 50px 20px;
 	}
 	.full_view_output h3 {
 		font-size: 30px;
+	}
+	section.cover {
+		height: calc(100vh - 124px);
+	}
+	section.mission .compass{
+		opacity: .2;
 	}
 	section.mission .max-width-wrapper {
 		padding: 60px 5px;
