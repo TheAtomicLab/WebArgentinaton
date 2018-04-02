@@ -3,7 +3,12 @@ let form_charla = `
 <div class="form_argent" >
 	<div class="forms-builder-wrapper" >
 		<form class="description" action="https://my.sendinblue.com/users/subscribeembed/js_id/2tksq/id/2" method="POST">
-			<input type="hidden" name="js_id" id="js_id" value="2tksq"><input type="hidden" name="listid" id="listid" value="12"><input type="hidden" name="from_url" id="from_url" value="yes"><input type="hidden" name="hdn_email_txt" id="hdn_email_txt" value=""> <input type="hidden" name="sib_simple" value="simple"> <input type="hidden" name="sib_forward_url" value="http://atomiclab.org/argentinaron" id="sib_forward_url">
+			<input type="hidden" name="js_id" id="js_id" value="2tksq">
+			<input type="hidden" name="listid" id="listid" value="12">
+			<input type="hidden" name="from_url" id="from_url" value="yes">
+			<input type="hidden" name="hdn_email_txt" id="hdn_email_txt" value="">
+			<input type="hidden" name="sib_simple" value="simple">
+			<input type="hidden" name="sib_forward_url" value="http://atomiclab.org/argentinaron" id="sib_forward_url">
 			<div class="sib-container rounded" >
 				<input type="hidden" name="req_hid" id="req_hid" value="~NOMBRE~SURNAME" >
 				<div class="view-messages" > </div>
@@ -52,7 +57,12 @@ let form_sponsors = `
 <div class="form_argent" >
 	<div class="forms-builder-wrapper" >
 		<form class="description" action="https://my.sendinblue.com/users/subscribeembed/js_id/2tksq/id/3" method="POST">
-			<input type="hidden" name="js_id" id="js_id" value="2tksq"><input type="hidden" name="listid" id="listid" value="13"><input type="hidden" name="from_url" id="from_url" value="yes"><input type="hidden" name="hdn_email_txt" id="hdn_email_txt" value=""> <input type="hidden" name="sib_simple" value="simple"> <input type="hidden" name="sib_forward_url" value="http://atomiclab.org/argentinaton" id="sib_forward_url">
+			<input type="hidden" name="js_id" id="js_id" value="2tksq">
+			<input type="hidden" name="listid" id="listid" value="13">
+			<input type="hidden" name="from_url" id="from_url" value="yes">
+			<input type="hidden" name="hdn_email_txt" id="hdn_email_txt" value="">
+			<input type="hidden" name="sib_simple" value="simple">
+			<input type="hidden" name="sib_forward_url" value="http://atomiclab.org/argentinaton" id="sib_forward_url">
 			<div class="sib-container rounded" >
 				<input type="hidden" name="req_hid" id="req_hid" value="~NOMBRE~SURNAME~EMPRESA" >
 				<div class="view-messages" > </div>
@@ -136,6 +146,30 @@ let form_donaciones = `
 				</a>
 			</div>
 		</div>
+		<p style="text-align:center">Otros montos</p>
+		<div class="otros_montos">
+			<div class="mont_item">
+				Donación Libre (Paypal)
+				<div class="out_libre_pago">
+					<div>
+						<form target="_blank" action="https://www.paypal.com/paypalme/TheAtomicLab/send" method="get">
+							<input id="donacion_monto" type="number" name="amount" min="0" placeholder="00" required>
+							<select name="currencyCode">
+								<option value="ARS">ARS</option>
+								<option value="USD">USD</option>
+							</select>
+							<input type="submit" value="Continuar" class="btn btn-sm">
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="mont_item">
+				<a target="_blank" href="https://www.mercadopago.com/mla/debits/new?preapproval_plan_id=0ea4b227dc044f8f9d5ecdcd60aca56c">Donación mensual (Mercadopago)</a>
+			</div>
+			<div class="mont_item">
+				<a target="_blank" href="https://blockchain.info/address/35WXjV589EHaKjEauZvghdZy8CJtnNX1Ah">Donación Libre (Bitcoins)</a>
+			</div>
+		</div>
 	</div>
 </div>
 `;
@@ -180,6 +214,8 @@ function open_form(name = false, event = false){
 	}
 }
 
+open_form('donar');
+
 function close_full_popup(event = false){
 	if(event != false){
 		if(event.keyCode != 13){
@@ -189,3 +225,5 @@ function close_full_popup(event = false){
 	$('body').removeClass('full_pop_show');
 	$('.full_view_output').html('');
 }
+
+console.log('%c¡Abriste la consola! ¿Sabés algo de código? ¡Podés sumarte!\n\nhttp://AtomicLab.org/SerParte', 'color:#4a90e2;padding:30px 5px;font-family:"Open Sans";');
