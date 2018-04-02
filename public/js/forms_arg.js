@@ -174,7 +174,7 @@ let form_donaciones = `
 </div>
 `;
 let html_send_button = `<div class="byline" > <button class="button editable " type="submit" data-editfield="subscribe" >Enviar</button></div>`;
-let callbackCaptcha = function(){
+let callbackCaptcha = function(response){
 	if(response.length > 0) {
         $(".sned_btn").html(html_send_button);
     }
