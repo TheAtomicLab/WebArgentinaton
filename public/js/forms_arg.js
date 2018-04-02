@@ -214,8 +214,6 @@ function open_form(name = false, event = false){
 	}
 }
 
-open_form('donar');
-
 function close_full_popup(event = false){
 	if(event != false){
 		if(event.keyCode != 13){
