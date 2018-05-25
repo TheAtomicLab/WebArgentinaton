@@ -223,3 +223,27 @@ margin-bottom: 0px;
 		line-height: 40px;
 	}
 }
+
+.mainPop{
+	background-color: white;
+	width: 350px;
+	border-radius: 3px;
+	border: solid 1px #CACACA;
+	box-sizing: border-box;
+}
+.mainPop h2 {
+	font-size: 19px;
+  line-height: 20px;
+  padding: 5px;
+  margin: 0px;
+  color: white;
+}
+.mainPop .popHeader {
+	background-color: #4772b2;
+}
+.mainPop .popHeader.hasHeaderImg {
+	height: 150px;
+}
+.mainPop .popContent {
+	padding: 5px;
+}
