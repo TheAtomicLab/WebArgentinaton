@@ -1,3 +1,9 @@
+<?php
+function dateqr(){
+	echo '?'.date('Y_m_d_H_i');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -37,7 +43,7 @@
 
 	<!-- Style -->
   <link rel="stylesheet" href="public/css/styles.css">
-	<link rel="stylesheet" href="public/css/styles2.css">
+	<link rel="stylesheet" href="public/css/styles2.css<?php dateqr(); ?>">
 
 	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Lato|Montserrat:300,400,500,700" rel="stylesheet">
