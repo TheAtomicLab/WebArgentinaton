@@ -2,7 +2,7 @@
 	background: none;
 	opacity: 1;
 }
-.parallax-window:before {
+.parallax-mirror:after, .p-androidFix:before {
   content: '';
   background: linear-gradient(rgba(71, 114, 178, 0.5) 60%, rgba(71, 114, 178, 1));
   position: absolute;
@@ -16,6 +16,11 @@ section.cover .main-copy .logo {
 }
 section.cover {
 	height: calc(100vh - 52px);
+}
+@media (max-height: 650px){
+	section.cover .logo img{
+		max-height: 50vh;
+	}
 }
 .f-blue {
 	color: #4772b2;

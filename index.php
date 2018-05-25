@@ -1,3 +1,4 @@
+<?php include_once('include/header.php'); ?>
   <div class="full_view_pop">
     <div>
 			<div class="full_view_bg" onclick="close_full_popup()"></div>
@@ -14,7 +15,7 @@
 	    	</div>
 	    	<div class="main-copy">
 	            <div class="logo">
-	            	<img src="public/img/argentinaton-logo.png" alt="">
+	            	<img src="public/img/argentinaton-logo.svg" alt="Logo Argentinaton">
 	            </div>
 	            <div class="tagline">
 	            	Recorriendo toda la Argentina regalando prótesis 3D.
@@ -56,7 +57,7 @@
 				                		</a>
 			            	</div>
 			            	<div class="col-md-5">
-								<img class="map" src="public/img/map.png" alt="mapa">
+								<img class="map" src="public/img/map_incons.svg" alt="mapa">
 			            	</div>
 			            </article>
     				</div>
@@ -93,7 +94,7 @@
 			                	<div class="col-xs-3 col-md-3 col-sm-6 margin-bottom-mob">
 			                		<div class="item-box">
 				                		<div class="icon">
-				                			<img src="public/img/pencil.svg" alt="mano">
+				                			<img src="public/img/icon_mano.svg" alt="mano">
 				                		</div>
 				                		<div class="text">
 				                			Quiero que me
@@ -107,7 +108,7 @@
 			                	<div class="col-xs-3 col-md-3 col-sm-6 margin-bottom-mob">
 			                		<div class="item-box">
 				                		<div class="icon">
-				                			<img src="public/img/people.svg" alt="people">
+				                			<img src="public/img/icon_donacion.svg" alt="people">
 				                		</div>
 				                		<div class="text">
 				                			Quiero hacer una
@@ -121,11 +122,11 @@
 			                	<div class="col-xs-3 col-md-3 col-sm-6">
 			                		<div class="item-box">
 				                		<div class="icon">
-				                			<img src="public/img/discussion.svg" alt="discussion">
+				                			<img src="public/img/icon_charla.svg" alt="discussion">
 				                		</div>
 				                		<div class="text">
 				                			Quiero que den una
-											charla en mi ciudad
+											charla en mi empresa
 				                		</div>
 				                		<a tabindex="1" onclick="open_form('charla')" onkeydown="open_form('charla', event)" class="btn btn-lg">
 				                			Contacto
@@ -135,7 +136,7 @@
 			                	<div class="col-xs-3 col-md-3 col-sm-6">
 			                		<div class="item-box">
 				                		<div class="icon">
-				                			<img src="public/img/id-card.svg" alt="card">
+				                			<img src="public/img/icon_sponsor.svg" alt="card">
 				                		</div>
 				                		<div class="text">
 				                			Quiero sponsorear el
@@ -152,7 +153,7 @@
 		        		  <div>
 		            		<div class="item-box">
 		                		<div class="icon">
-		                			<img src="public/img/pencil.svg" alt="mano">
+		                			<img src="public/img/icon_mano.svg" alt="mano">
 		                		</div>
 		                		<div class="text">
 		                			Quiero que me
@@ -166,7 +167,7 @@
 		        		  <div>
 				    		<div class="item-box">
 				        		<div class="icon">
-				        			<img src="public/img/people.svg" alt="people">
+				        			<img src="public/img/icon_donacion.svg" alt="people">
 				        		</div>
 				        		<div class="text">
 				        			Quiero hacer una
@@ -180,11 +181,11 @@
 		        		  <div>
 				    		<div class="item-box">
 				        		<div class="icon">
-				        			<img src="public/img/discussion.svg" alt="discussion">
+				        			<img src="public/img/icon_charla.svg" alt="discussion">
 				        		</div>
 				        		<div class="text">
 		                			Quiero que den una
-									charla en mi ciudad
+									charla en mi empresa / ciudad
 				        		</div>
 				        		<a tabindex="1" onclick="open_form('charla')" onkeydown="open_form('charla', event)" class="btn btn-lg">
 				        			Contacto
@@ -194,7 +195,7 @@
 		        		  <div>
 		        		    <div class="item-box">
 		                		<div class="icon">
-		                			<img src="public/img/id-card.svg" alt="card">
+		                			<img src="public/img/icon_sponsor.svg" alt="card">
 		                		</div>
 		                		<div class="text">
 		                			Quiero sponsorear el
@@ -211,12 +212,10 @@
 		        		<h3>
 		        			Empresas que nos acompañan
 		        		</h3>
-		                <article class="row">
-		                	<div class="col-md-1">
-			            	</div>
+		                <article class="row" style="display: flex; justify-content: center;">
 			            	<div class="col-md-2">
-			            		<a onclick="open_form('sponsor')">
-			            			<img src="public/img/placeholder.jpg" alt="company">
+			            		<a href="https://www.ford.com.ar">
+			            			<img src="public/img/ford_logo.svg" alt="company">
 			            		</a>
 			            	</div>
 			            	<div class="col-md-2">
@@ -229,48 +228,6 @@
 			            			<img src="public/img/placeholder.jpg" alt="company">
 			            		</a>
 			            	</div>
-			            	<div class="col-md-2">
-			            		<a onclick="open_form('sponsor')">
-			            			<img src="public/img/placeholder.jpg" alt="company">
-			            		</a>
-			            	</div>
-			            	<div class="col-md-2">
-			            		<a onclick="open_form('sponsor')">
-			            			<img src="public/img/placeholder.jpg" alt="company">
-			            		</a>
-			            	</div>
-			            	<div class="col-md-1">
-			            	</div>
-		                </article>
-		                <article class="row hide-on-mobile">
-		                	<div class="col-md-1">
-			            	</div>
-			            	<div class="col-md-2">
-			            		<a onclick="open_form('sponsor')">
-			            			<img src="public/img/placeholder.jpg" alt="company">
-			            		</a>
-			            	</div>
-			            	<div class="col-md-2">
-			            		<a onclick="open_form('sponsor')">
-			            			<img src="public/img/placeholder.jpg" alt="company">
-			            		</a>
-			            	</div>
-			            	<div class="col-md-2">
-			            		<a onclick="open_form('sponsor')">
-			            			<img src="public/img/placeholder.jpg" alt="company">
-			            		</a>
-			            	</div>
-			            	<div class="col-md-2">
-			            		<a onclick="open_form('sponsor')">
-			            			<img src="public/img/placeholder.jpg" alt="company">
-			            		</a>
-			            	</div>
-			            	<div class="col-md-2">
-			            		<a onclick="open_form('sponsor')">
-			            			<img src="public/img/placeholder.jpg" alt="company">
-			            		</a>
-			            	</div>
-			            	<div class="col-md-1">
 			            	</div>
 		                </article>
 		            </section>
@@ -312,3 +269,4 @@
 		</div>
 	</main>
 	<script src="public/js/forms_arg.js" type="text/javascript" charset="utf-8"></script>
+	<?php include_once('include/footer.php'); ?>

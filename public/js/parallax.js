@@ -109,6 +109,7 @@
           backgroundPosition: this.position
         });
       }
+			this.$element.addClass('p-androidFix');
       return this;
     }
 
