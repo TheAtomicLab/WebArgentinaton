@@ -1,5 +1,84 @@
 body.map{
 	background:white;
+	.widget{
+		width:312px;
+		border-radius:4px;
+		overflow:hidden;
+		border:1px solid $grey-light;
+		@include centerer(true,true);
+		.top-box{
+			height:213px;
+			@include background-size(cover);
+			position:relative;
+			.manoton-label{
+				position:absolute;
+				left:20px;
+				top:15px;
+				background:$blue-france;
+				border-radius:3px;
+				color:white;
+				text-transform:uppercase;
+				padding:5px;
+			}
+		}
+		.bottom-box{
+			padding: 20px;
+			.location{
+				color:$blue-france;
+				font-size:15px;
+				line-height:20px;
+			}
+			p{
+				font-size:14px;
+				font-family: 'Lato', sans-serif;
+				color:$grey-med;
+				line-height: 23px;
+				margin-top: 6px;
+			}
+			.protesis{
+				background: $grey-bone;
+				text-align: center;
+				padding: 14px 20px 16px 20px;
+				margin: 11px 0 16px 0;
+				color:$grey-med;
+				img{
+					display: inline-block;
+				    vertical-align: bottom;
+				    margin-right: 4px;
+				}
+			}
+			.date{
+				background:$grey-mainstream;
+				color:white;
+				font-size:20px;
+				padding: 7px 10px 5px 10px;
+				border-radius:3px;
+				text-align:center;
+				display:inline-block;
+				vertical-align:left;
+				line-height: 18px;
+				span{
+					font-size:11px;
+					display:block;
+				}
+			}
+			.more-pics{
+				background:$blue-france;
+				border-radius:3px;
+				color:white;
+				text-transform:uppercase;
+				padding:5px 8px;
+				vertical-align: middle;
+				float: right;
+				margin-top: 11px;
+				@include animated();
+				cursor:pointer;
+				&:hover{
+					background:$blue-oil;
+				}
+			}
+		}
+	}
 	.sidebar{
 		width:300px;
 		height:100vh;
@@ -14,6 +93,7 @@ body.map{
 			z-index: 2;
 			.logo{
 				background:$blue-france;
+				text-align:center;
 				img{
 					max-width: 140px;
 				}
@@ -23,12 +103,19 @@ body.map{
 				color: white;
 				font-size: 15px;
 				padding: 15px 20px;
+				text-align: center;
+				img{
+					display: inline-block;
+					vertical-align: middle;
+					margin-right: 2px;
+				}
 			}
 		}
 		.timeline{
 			background:#F2F2F2;
 			padding-left:30px;
-			margin-top:172px;
+			margin-top:145px;
+		    padding-top: 30px;
 			>div:first-of-type, >div:last-of-type{
 				&:before{
 					display:none;
