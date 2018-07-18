@@ -42,7 +42,7 @@ function dateqr(){
 
 
 	<!-- Style -->
-  <link rel="stylesheet" href="public/css/styles.css">
+  <link rel="stylesheet" href="public/css/styles.css<?php dateqr(); ?>">
 	<link rel="stylesheet" href="public/css/styles2.css<?php dateqr(); ?>">
 
 	<!-- Fonts -->

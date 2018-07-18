@@ -212,20 +212,20 @@
 		        		<h3>
 		        			Empresas que nos acompañan
 		        		</h3>
-		                <article class="row" style="display: flex; justify-content: center;">
+		                <article class="row empresas_acompanan" style="display: flex; justify-content: center;">
 			            	<div class="col-md-2">
-			            		<a href="https://www.ford.com.ar">
+			            		<a href="https://www.ford.com.ar" target="_blank">
 			            			<img src="public/img/ford_logo.svg" alt="company">
 			            		</a>
 			            	</div>
 			            	<div class="col-md-2">
-			            		<a onclick="open_form('sponsor')">
-			            			<img src="public/img/placeholder.jpg" alt="company">
+			            		<a href="http://zarate.gob.ar" target="_blank">
+			            			<img src="public/img/zaratelogo.svg" alt="company">
 			            		</a>
 			            	</div>
 			            	<div class="col-md-2">
-			            		<a onclick="open_form('sponsor')">
-			            			<img src="public/img/placeholder.jpg" alt="company">
+			            		<a href="http://www.123seguro.com" target="_blank">
+			            			<img src="public/img/123logo.svg" alt="company">
 			            		</a>
 			            	</div>
 			            	</div>

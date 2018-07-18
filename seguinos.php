@@ -126,13 +126,13 @@
 			}
 			html+='</div>';//end content
 		html+='</div>';//end main
-		$('body').append(html);
-		console.log(html);
+		// $('body').append(html);
+		console.log(obj.latLan);
+		let pooop = L.popup()
+		.setLatLng(obj.latLan)
+		.setContent(html)
+		.openOn(mapAtom);
 	}
-	let pooop = L.popup()
-    .setLatLng(obj.latLan)
-    .setContent(html)
-    .openOn(mapAtom);
 </script>
 
 

@@ -252,3 +252,23 @@ margin-bottom: 0px;
 .mainPop .popContent {
 	padding: 5px;
 }
+.mainPop .fondoHead {
+	background-size: cover;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  position: absolute;
+}
+.empresas_acompanan > div {
+	display: flex;
+	align-items: center;
+}
+@media (max-width: 500px) {
+	.empresas_acompanan {
+		flex-wrap: wrap;
+	}
+	.empresas_acompanan > div {
+		width: 60%;
+		margin-bottom: 40px;
+	}
+}
