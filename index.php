@@ -220,12 +220,12 @@
 			            	</div>
 			            	<div class="col-md-2">
 			            		<a href="http://zarate.gob.ar" target="_blank">
-			            			<img src="public/img/zaratelogo.svg" alt="company">
+			            			<img src="public/img/zaratelogo.svg?1" alt="company">
 			            		</a>
 			            	</div>
 			            	<div class="col-md-2">
 			            		<a href="http://www.123seguro.com" target="_blank">
-			            			<img src="public/img/123logo.svg" alt="company">
+			            			<img src="public/img/123logo.svg?1" alt="company">
 			            		</a>
 			            	</div>
 			            	</div>
