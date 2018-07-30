@@ -27,12 +27,12 @@
 <script type="text/javascript">
 	let eventos = {
 		1234565: {
-			type: 'entrega',
-			date: 1525449989,
-			latLan: [51.5, -0.09],
+			type: 'entrega', //v_label
+			date: 1525449989, //v_dia, v_mes
+			latLan: [51.5, -0.09], //v_location
 			data: {
-				img: 'nene001.jpg',
-				desc: 'Hoy entregamos una mano felizmente en londres. Gino no deja de roncar por las noches.'
+				img: 'nene001.jpg', //v_imagen
+				desc: 'Hoy entregamos una mano felizmente en londres. Gino no deja de roncar por las noches.' //v_texto
 			}
 		},
 		2146464: {
@@ -44,6 +44,11 @@
 			type: 'entrega',
 			date: 1525499989,
 			latLan: [51.525, -0.2],
+		},
+		4456465: {
+			type: 'entrega',
+			date: 1525499989,
+			latLan: [51.525, -0.5],
 		},
 	}
 
@@ -103,7 +108,7 @@
 	}
 
 	function createPopup(obj){
-		let html = '<div class="mainPop">';
+		let html = '';
 		let hasHeadImg = '';
 		let headerUrl = false;
 		if('data' in obj){
@@ -112,20 +117,30 @@
 				headerUrl = 'public/img/gallery/'+obj.data.img;
 			}
 		}
-		html+='<div class="popHeader'+hasHeadImg+'">';
-		if(obj.type=='entrega'){
-			html+='<h2>Entrega</h2>';
-		}
-		if(headerUrl){
-			html+='<div class="fondoHead" style="background:url(\''+headerUrl+'\')"></div>';
-		}
-		html+='</div>';//end header
-			html+='<div class="popContent">';
-			if('data' in obj && 'desc' in obj.data && obj.data.desc!=''){
-				html+='<p class="descripcion">'+obj.data.desc+'</p>';
-			}
-			html+='</div>';//end content
-		html+='</div>';//end main
+
+		let v_type = obj.type;
+		let v_image = headerUrl;
+		let v_location = obj.latLan;
+		let v_text = "";
+		let v_fecha = new Date(obj.date*1000);
+		//Asco pero para pasar rapido
+		const monthNames = ["ENERO", "FEBRERO", "MARZO", "ABRIL", "MAYO", "JUNIO",
+  		"JULIO", "AGOSTO", "SEPTIEMBRE", "OCTUBRE", "NOVIEMBRE", "DICIEMBRE"
+		];
+
+		if(obj.data != undefined )
+			{
+				if(obj.data.desc != undefined)
+				{
+					v_text = obj.data.desc;	
+				}
+			};
+		
+		
+		let v_dia = v_fecha.getDay();
+		let v_mes = monthNames[v_fecha.getMonth()];
+
+		html = '<div class="widget"><div class="top-box" style="background-image: url('+v_image+');"><div class="manoton-label">'+v_type+'</div></div><div class="bottom-box"><div class="location">'+v_location+'</div><p>'+v_text+'</p><div class="protesis"><img src="public/img/delivered-hand.svg" alt="h">34 manos entregadas</div><div class="footer"><div class="date"> '+v_dia+'<span> '+v_mes+'</span></div><div class="more-pics">Ver Fotos</div></div></div></div>';//end main
 		// $('body').append(html);
 		console.log(obj.latLan);
 		let pooop = L.popup()
