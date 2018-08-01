@@ -268,10 +268,15 @@ crossorigin=""></script>
 
 			let v_dia = v_fecha.format('D');
 			let v_mes = v_fecha.format('MMMM').toUpperCase();
+			let v_manosEntregadas = obj.cantidadEntragadas+(obj.cantidadEntragadas==1 ? ' mano entregada' : ' manos entregadas')
 
-			html = '<div class="widget"><div class="top-box" style="'+v_image+'"><div class="manoton-label">'+v_type+'</div></div><div class="bottom-box"><div class="location">'+v_location+'</div><p>'+v_text+'</p><div class="protesis"><img src="public/img/delivered-hand.svg" alt="h">34 manos entregadas</div><div class="footer"><div class="date"> '+v_dia+'<span> '+v_mes+'</span></div><div class="more-pics">Ver Fotos</div></div></div></div>';//end main
+			html = '<div class="widget"><div class="top-box" style="'+v_image+'"><div class="manoton-label">'+v_type+'</div></div><div class="bottom-box"><div class="location">'+v_location+'</div><p>'+v_text+'</p><div class="protesis"><img src="public/img/delivered-hand.svg" alt="h">'+v_manosEntregadas+'</div><div class="footer"><div class="date"> '+v_dia+'<span> '+v_mes+'</span></div></div></div></div>';//end main
 			$html = $(html);
-			if(!v_image){$html.find('.top-box').css('display','none')}
+			if(!v_image){
+				$html.find('.top-box').css('display','none');
+			} else {
+				$html.find('.footer').append('<div class="more-pics">Ver Fotos</div>');
+			}
 			console.log(obj.latLan);
 
 			let pooop = L.popup()
