@@ -272,3 +272,53 @@ margin-bottom: 0px;
 		margin-bottom: 40px;
 	}
 }
+
+
+/*map*/
+body.map {
+	overflow: hidden;
+}
+body.map .widget {
+    width: 312px;
+    border-radius: 4px;
+    overflow: hidden;
+    border: initial;
+    position: relative;
+    top: initial;
+    left: initial;
+    transform: initial;
+		background: white;
+}
+body.map .widget .bottom-box p {
+	color: #555;
+}
+.leaflet-popup {
+	padding-bottom: 64px;
+}
+.leaflet-popup-content {
+	margin: inherit !important;
+	line-height: inherit !important;
+	width: inherit !important;
+}
+.leaflet-popup-content-wrapper {
+	padding: 0px;
+	border-radius: 0px;
+	background: none;
+}
+body.map .sidebar {
+	z-index: 2;
+	position: relative;
+}
+section.map {
+	position: absolute;
+  z-index: 1;
+  top: 0px;
+  width: 100%;
+  height: 100vh;
+  outline: none;
+}
+body.map .sidebar .timeline {
+	margin-top: initial;
+  padding-top: 175px;
+  min-height: 100vh;
+}

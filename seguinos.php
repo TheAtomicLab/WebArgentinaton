@@ -132,11 +132,11 @@
 			{
 				if(obj.data.desc != undefined)
 				{
-					v_text = obj.data.desc;	
+					v_text = obj.data.desc;
 				}
 			};
-		
-		
+
+
 		let v_dia = v_fecha.getDay();
 		let v_mes = monthNames[v_fecha.getMonth()];
 
@@ -154,3 +154,37 @@
 <?php
 	include_once('include/footer.php');
 ?>
+
+
+
+
+<div class="widget">
+	<div class="top-box" style="background-image: url('public/img/img-placeholder.png');">
+		<div class="manoton-label">
+			Manotón
+		</div>
+	</div>
+	<div class="bottom-box">
+		<div class="location">
+			Rosario, Santa Fe
+		</div>
+		<p>
+			It was a humorously perilous business for both of us. For, before we proceed further, it must be said that the monkey-rope was.
+		</p>
+		<div class="protesis">
+			<img src="public/img/delivered-hand.svg" alt="h">
+			34 manos entregadas
+		</div>
+		<div class="footer">
+			<div class="date">
+				20
+				<span>
+					MAY
+				</span>
+			</div>
+			<div class="more-pics">
+				Ver Fotos
+			</div>
+		</div>
+	</div>
+</div>
