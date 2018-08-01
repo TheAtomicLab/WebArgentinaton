@@ -186,27 +186,27 @@ crossorigin=""></script>
 			let firstDate = moment.unix(eventos[Object.keys(eventos)[0]].date);
 			let lastProvince = false;
 			$.each(eventos, function(k,o){
-			nodosRuta.push(L.latLng(o.latLan[0], o.latLan[1]));
-				eventos[k].obj = {};
-				eventos[k].obj = L.marker(o.latLan).addTo(mapAtom);
-				eventos[k].obj.id = k;
-				eventos[k].obj.on('click', markerclick);
 				if(o.visited){
+					nodosRuta.push(L.latLng(o.latLan[0], o.latLan[1]));
+					eventos[k].obj = {};
+					eventos[k].obj = L.marker(o.latLan).addTo(mapAtom);
+					eventos[k].obj.id = k;
+					eventos[k].obj.on('click', markerclick);
 					if(lastCiudad != o.region.ciudad){
 						cantidadCiudades++;
 					}
 					lastCiudad = o.region.ciudad;
 				}
 				if(o.type=='entrega'){
-					eventos[k].obj.setIcon(iconoAtomico);
+					if(o.visited){
+						eventos[k].obj.setIcon(iconoAtomico);
+						cantidadManos += o.cantidadEntragadas;
+					}
 					if(lastProvince != o.region.provincia){
 						createStopProvince(o);
 					}
-					if(o.visited){
-						cantidadManos += o.cantidadEntragadas;
-					}
 					lastProvince = o.region.provincia;
-					createStopCity(o, firstDate);
+					createStopCity(k, o, firstDate);
 				}
 			});
 			$('.cantidadCiudades').html(cantidadCiudades);
@@ -222,16 +222,24 @@ crossorigin=""></script>
 			createPopup(eventos[this.id]);
 			console.log(this.id);
 		}
+		function createPopupFromId(id){
+			createPopup(eventos[id]);
+		}
 
-		function createStopCity(obj, firstDate){
+		function createStopCity(id, obj, firstDate){
 			let v_fecha = moment.unix(obj.date);
 			let v_dia = v_fecha.format('D');
 			let v_mes = v_fecha.format('MMM').toUpperCase();
 			let v_ciudad = obj.region.ciudad;
 			let v_diaViaje = 'Día '+v_fecha.endOf('day').diff(firstDate.startOf('day'), 'days');
 			let v_pending = '';
-			if(!obj.visited){v_pending = ' pending';}
-			let html = '<div class="stop'+v_pending+'"><div class="date">'+v_dia+'<span>'+v_mes+'</span></div><div class="pin"></div><div class="location">'+v_ciudad+'<span class="distance">'+v_diaViaje+'</span></div></div>';
+			let v_onclick = '';
+			if(!obj.visited){
+				v_pending = ' pending';
+			} else {
+				v_onclick = ' onclick="createPopupFromId(\''+id+'\')"'
+			}
+			let html = '<div idEntrega="'+id+'" class="stop'+v_pending+'"><div class="date">'+v_dia+'<span>'+v_mes+'</span></div><div class="pin"></div><div class="location"'+v_onclick+'>'+v_ciudad+'<span class="distance">'+v_diaViaje+'</span></div></div>';
 			$('.timeline').append(html);
 		}
 		function createStopProvince(obj){

@@ -322,3 +322,9 @@ body.map .sidebar .timeline {
   padding-top: 175px;
   min-height: 100vh;
 }
+body.map .sidebar .timeline .stop:not(.pending) .location {
+	cursor: pointer;
+}
+body.map .sidebar .timeline .stop.pending .location {
+	cursor: default;
+}
