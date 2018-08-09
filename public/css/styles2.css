@@ -371,10 +371,10 @@ body.map .menu {
 		transform: translateY(calc(-50% - 8px));
 	}
 	body.map .menu.show-sidebar:after {
-		transform: rotate(45deg) translateY(0px);
+		transform: rotate(45deg) translateY(-50%);
 	}
 	body.map .menu.show-sidebar:before {
-		transform: rotate(-45deg) translateY(0px);
+		transform: rotate(-45deg) translateY(-50%);
 	}
 	body.map .sidebar:not(.show-sidebar) {
 		display: none;
