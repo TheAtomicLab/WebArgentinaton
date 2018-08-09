@@ -38,8 +38,9 @@
 
 	<link rel="stylesheet" href="leaflet/leaflet.css">
 	<link rel="stylesheet" href="leaflet/leaflet-routing-machine.css">
-	<script src="leaflet/leaflet.js"></script>
-	<script src="leaflet/leaflet-routing-machine.js"></script>
+	<script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+	<script src="public/js/routing/dist/leaflet-routing-machine.js"></script>
+
 	<link rel="stylesheet" href="public/css/styles2.css">
 
 
@@ -50,13 +51,10 @@ crossorigin=""></script>
 
 
 <!-- Load Esri Leaflet Geocoder from CDN -->
-<link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.2.13/dist/esri-leaflet-geocoder.css"
-integrity="sha512-v5YmWLm8KqAAmg5808pETiccEohtt8rPVMGQ1jA6jqkWVydV5Cuz3nJ9fQ7ittSxvuqsvI9RSGfVoKPaAJZ/AQ=="
-crossorigin="">
-<script src="https://unpkg.com/esri-leaflet-geocoder@2.2.13/dist/esri-leaflet-geocoder.js"
-integrity="sha512-zdT4Pc2tIrc6uoYly2Wp8jh6EPEWaveqqD3sT0lf5yei19BC1WulGuh5CesB0ldBKZieKGD7Qyf/G0jdSe016A=="
-crossorigin=""></script>
+<link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.2.13/dist/esri-leaflet-geocoder.css" integrity="sha512-v5YmWLm8KqAAmg5808pETiccEohtt8rPVMGQ1jA6jqkWVydV5Cuz3nJ9fQ7ittSxvuqsvI9RSGfVoKPaAJZ/AQ==" crossorigin="">
+<script src="https://unpkg.com/esri-leaflet-geocoder@2.2.13/dist/esri-leaflet-geocoder.js" integrity="sha512-zdT4Pc2tIrc6uoYly2Wp8jh6EPEWaveqqD3sT0lf5yei19BC1WulGuh5CesB0ldBKZieKGD7Qyf/G0jdSe016A==" crossorigin=""></script>
 <script src="public/js/moment.js" charset="utf-8"></script>
+<script src="public/js/jsonentregas.js" charset="utf-8"></script>
 
 
 </head>
@@ -85,67 +83,10 @@ crossorigin=""></script>
 
 	<script type="text/javascript">
 		moment.locale('es');
-		let eventos = {
-			1234565: {
-				type: 'entrega',
-				cantidadEntragadas: 1, //v_label
-				visited: true,
-				date: 1525449989, //v_dia, v_mes
-				latLan: [51.5, -0.09], //v_location
-				region: {
-					pais: 'Argentina',
-					provincia: 'Córdoba',
-					ciudad: 'La Cumbre',
-				},
-				data: {
-					img: 'nene001.jpg', //v_imagen
-					desc: 'Hoy entregamos una mano felizmente en londres. Gino no deja de roncar por las noches.' //v_texto
-				},
-			},
-			2146464: {
-				type: 'entrega',
-				cantidadEntragadas: 1,
-				visited: true,
-				date: 1525489989,
-				latLan: [51.53, -0.091],
-				region: {
-					pais: 'Argentina',
-					provincia: 'Córdoba',
-					ciudad: 'El Durazno',
-				},
-			},
-			4456464: {
-				type: 'entrega',
-				cantidadEntragadas: 1,
-				visited: true,
-				date: 1525499989,
-				latLan: [51.525, -0.2],
-				region: {
-					pais: 'Argentina',
-					provincia: 'Córdoba',
-					ciudad: 'Pilar',
-				},
-			},
-			4456465: {
-				type: 'entrega',
-				cantidadEntragadas: 1,
-				visited: false,
-				date: 1526774400,
-				latLan: [51.525, -0.53],
-				region: {
-					pais: 'Argentina',
-					provincia: 'Formosa',
-					ciudad: 'Las Varillas',
-				},
-				data: {
-					img: 'nene001.jpg', //v_imagen
-					desc: 'Hoy entregamos una mano felizmente en londres. Gino no deja de roncar por las noches.' //v_texto
-				},
-			},
-		}
+
 
 		let tokenMap = 'pk.eyJ1IjoibWF0aWFzZ2YiLCJhIjoiY2pnc205Mmo2MDJsdzMzbjI2dHVsZnNhYSJ9.GHBkK7xLQz1C6DYDmQqXTw';
-		let mapAtom = L.map('mainMap').setView([51.5, -0.09],12);
+		let mapAtom = L.map('mainMap').setView([-35.3380676, -69.5867878],5);
 		L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token='+tokenMap, {
 			attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
 			maxZoom: 18,
@@ -176,26 +117,52 @@ crossorigin=""></script>
 			},
 	  	// geocoder: L.Control.Geocoder.nominatim()
 		});
+		let rutaFuture = L.Routing.control({
+	  	waypoints: [],
+	  	routeWhileDragging: false,
+			draggableWaypoints: false,
+			addWaypoints: false,
+			createMarker: false,
+			lineOptions: {
+				styles: [
+					{color: '#f27329', opacity: 1, weight: 4, dashArray: '4 1 2 1'},
+				]
+			},
+	  	// geocoder: L.Control.Geocoder.nominatim()
+		});
 		let nodosRuta = [];
+		let nodosRutaFuture = [];
 
 		//eventos
 		function iniEventos(){
-			cantidadCiudades = 0;
-			cantidadManos = 0;
-			lastCiudad = '';
+			var cantidadCiudades = 0;
+			var cantidadManos = 0;
+			var lastCiudad = '';
+			var nodosFuturo = '';
 			let firstDate = moment.unix(eventos[Object.keys(eventos)[0]].date);
 			let lastProvince = false;
 			$.each(eventos, function(k,o){
+				let fechaEvento = moment.unix(o.date);
+				if(fechaEvento.diff(moment()) < 0){
+					o.visited = true;
+				} else {
+					o.visited = false;
+				}
 				if(o.visited){
 					nodosRuta.push(L.latLng(o.latLan[0], o.latLan[1]));
-					eventos[k].obj = {};
-					eventos[k].obj = L.marker(o.latLan).addTo(mapAtom);
-					eventos[k].obj.id = k;
-					eventos[k].obj.on('click', markerclick);
+					if(o.type != 'point'){
+						eventos[k].obj = {};
+						eventos[k].obj = L.marker(o.latLan).addTo(mapAtom);
+						eventos[k].obj.id = k;
+						eventos[k].obj.on('click', markerclick);
+					}
 					if(lastCiudad != o.region.ciudad){
 						cantidadCiudades++;
 					}
 					lastCiudad = o.region.ciudad;
+				} else {
+					//not visited yet
+					nodosRutaFuture.push(L.latLng(o.latLan[0], o.latLan[1]));
 				}
 				if(o.type=='entrega'){
 					if(o.visited){
@@ -211,12 +178,22 @@ crossorigin=""></script>
 			});
 			$('.cantidadCiudades').html(cantidadCiudades);
 			$('.cantidadManos').html(cantidadManos);
+			console.log(nodosRutaFuture);
 			ruta.setWaypoints(nodosRuta);
 			ruta.addTo(mapAtom);
 			ruta.route();
-			console.log(ruta);
+			var firstpolyline = new L.polyline(nodosRuta, {
+				color: 'red',
+				weight: 3,
+				opacity: 0.5,
+				smoothFactor: 1
+
+			});
+			// firstpolyline.addTo(mapAtom);
 		}
+
 		iniEventos();
+
 
 		function markerclick(e){
 			createPopup(eventos[this.id]);
@@ -293,8 +270,6 @@ crossorigin=""></script>
 			.openOn(mapAtom);
 		}
 
-		// var geocodeService = L.esri.Geocoding.geocodeService();
-		// geocodeService.reverse().latlng(o.latLan).run(function(error, result){});
 	</script>
 </body>
 </html>
