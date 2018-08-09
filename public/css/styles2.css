@@ -328,3 +328,52 @@ body.map .sidebar .timeline .stop:not(.pending) .location {
 body.map .sidebar .timeline .stop.pending .location {
 	cursor: default;
 }
+body.map .menu {
+	display: none;
+}
+@media (max-width: 900px){
+	body.map .menu {
+		display: block;
+		position: absolute;
+		width: 50px;
+		height: 50px;
+		border-radius: 4px;
+		background-color: #4772b2;
+		z-index: 4;
+		right: 10px;
+		top: 10px;
+		cursor: pointer;
+	}
+	body.map .menu:before, body.map .menu:after {
+		content: '';
+		background-color: white;
+		width: 70%;
+		height: 5px;
+		position: absolute;
+		top: 50%;
+		left: 15%;
+		transition: transform 0.4s ease;
+	}
+	body.map .menu:before {
+		transform: translateY(calc(-50% + 8px));
+	}
+	body.map .menu:after {
+		transform: translateY(calc(-50% - 8px));
+	}
+	body.map .menu.show-sidebar:after {
+		transform: rotate(45deg) translateY(0px);
+	}
+	body.map .menu.show-sidebar:before {
+		transform: rotate(-45deg) translateY(0px);
+	}
+	body.map .sidebar:not(.show-sidebar) {
+		display: none;
+	}
+	body.map .sidebar {
+		display: block;
+		width: 100%;
+	}
+	body.map .sidebar .header {
+		width: 100%;
+	}
+}

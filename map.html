@@ -60,6 +60,9 @@ crossorigin=""></script>
 </head>
 
 <body class="map">
+	<div class="menu" onclick="abrirmenu(true)">
+
+	</div>
 	<main>
 		<section class="sidebar">
 			<div class="header">
@@ -82,6 +85,17 @@ crossorigin=""></script>
 
 
 	<script type="text/javascript">
+		function abrirmenu(show){
+			if(show){
+				$('.sidebar').addClass('show-sidebar');
+				$('div.menu').addClass('show-sidebar');
+				$('div.menu').attr('onclick', 'abrirmenu(false)');
+			} else {
+				$('.sidebar').removeClass('show-sidebar');
+				$('div.menu').removeClass('show-sidebar');
+				$('div.menu').attr('onclick', 'abrirmenu(true)');
+			}
+		}
 		moment.locale('es');
 
 
@@ -201,6 +215,7 @@ crossorigin=""></script>
 		}
 		function createPopupFromId(id){
 			createPopup(eventos[id]);
+			abrirmenu(false);
 		}
 
 		function createStopCity(id, obj, firstDate){
