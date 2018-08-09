@@ -331,6 +331,16 @@ body.map .sidebar .timeline .stop.pending .location {
 body.map .menu {
 	display: none;
 }
+@media (min-width: 900px){
+	*::-webkit-scrollbar {
+	    width: 6px !important;
+	    background: #f2f2f2;
+	}
+	*::-webkit-scrollbar-thumb {
+		background: #bdbdbd;
+		border-radius: 3px;
+	}
+}
 @media (max-width: 900px){
 	body.map .menu {
 		display: block;
